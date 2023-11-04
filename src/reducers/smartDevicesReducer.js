@@ -1,6 +1,15 @@
 export const smartDevicesReducer = (state, action) => {
-  console.log(action)
   switch (action.type) {
+    case "allOn":
+      return {
+        ...state,
+        lights: state.lights.map(() => true),
+      };
+    case "allOff":
+      return {
+        ...state,
+        lights: state.lights.map(() => false),
+      };
     case "toggle":
       return {
         ...state,
@@ -8,7 +17,7 @@ export const smartDevicesReducer = (state, action) => {
           action.payload === index ? !light : light
         ),
       };
-      break;
+    default:
+      return state;
   }
-  return state;
 };

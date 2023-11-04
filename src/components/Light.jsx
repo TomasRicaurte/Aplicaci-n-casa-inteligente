@@ -7,7 +7,7 @@ export function Light(props) {
   const isOn = lights[id]
   console.log(isOn)
   function handleOnToggle(){
-    dispatch({type: 'toggle', payLoad: id})
+    dispatch({type: 'toggle', payload: id})
   }
   return (
     <button
